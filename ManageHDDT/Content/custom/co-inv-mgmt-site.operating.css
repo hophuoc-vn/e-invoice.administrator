@@ -1,0 +1,90 @@
+﻿textarea {
+    resize: none;
+}
+
+#search-container {
+    width: 432px;
+}
+
+#search-box-container {
+    width: 190px;
+}
+
+.master-detail-caption {
+    padding: 0 0 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#co-list-select-indicator {
+    position: absolute;
+    bottom: 1px;
+    right: 35px;
+}
+
+#co-list-dropdown-indicator {
+    position: absolute;
+    bottom: 1px;
+    right: 70px;
+}
+
+#pub-tmpl-select-indicator {
+    position: absolute;
+    right: 35px;
+    top: 0;
+}
+
+.emph-title {
+    font-size: x-large;
+    text-transform: uppercase;
+    margin: 0;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.emph-sub-title {
+    font-size: large;
+    margin: 0;
+    padding-top: 5px;
+    font-weight: normal;
+}
+
+.sub-emph-title {
+    font-size: initial;
+    margin: 0;
+    padding: 5px 0;
+}
+
+@page {
+    size: A5;
+}
+
+@media print {
+    html, body {
+        background: #fff;
+    }
+
+    #inv-tmpl-container {
+        display: block !important;
+    }
+
+    #printView {
+        /*position: fixed;
+        left: 2%;*/
+        margin: 0 15px;
+    }
+
+    table td {
+        position: unset;
+    }
+}
+
+#pub-tmpl-stamp {
+    position: absolute;
+    right: 0;
+    top: 25%;
+}
+
+[inv-page] {
+    min-width: 210mm;
+}

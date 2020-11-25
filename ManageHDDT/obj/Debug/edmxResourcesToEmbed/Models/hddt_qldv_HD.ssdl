@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hddt_qldv_HD_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" />
+    <Property Name="BankAccountName" Type="nvarchar" MaxLength="200" />
+    <Property Name="BankName" Type="nvarchar" MaxLength="150" />
+    <Property Name="BankNumber" Type="nvarchar" MaxLength="250" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="150" />
+    <Property Name="Descriptions" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+    <Property Name="RepresentPerson" Type="nvarchar" MaxLength="150" />
+    <Property Name="TaxAuthorityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SignatureImage" Type="nvarchar" MaxLength="200" />
+    <Property Name="Domain" Type="nvarchar" MaxLength="200" />
+    <Property Name="Approved" Type="bit" />
+    <Property Name="IsUsed" Type="bit" />
+    <Property Name="MailContact" Type="nvarchar" MaxLength="100" />
+    <Property Name="ParentName" Type="nvarchar" MaxLength="200" />
+    <Property Name="PortalLink" Type="nvarchar" MaxLength="150" />
+    <Property Name="Type" Type="int" />
+    <Property Name="DepartmentId" Type="int" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExtraKey" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComID" Type="int" />
+    <Property Name="Code" Type="nvarchar" MaxLength="100" />
+    <Property Name="Value" Type="ntext" />
+  </EntityType>
+  <EntityType Name="InvCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="InvPattern" Type="nvarchar" MaxLength="20" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsPub" Type="bit" />
+  </EntityType>
+  <EntityType Name="InvoiceTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="InvCateID" Type="int" />
+    <Property Name="InvCateName" Type="nvarchar" MaxLength="200" />
+    <Property Name="TemplateName" Type="nvarchar" MaxLength="100" />
+    <Property Name="XmlFile" Type="ntext" />
+    <Property Name="XsltFile" Type="ntext" />
+    <Property Name="ServiceType" Type="nvarchar" MaxLength="200" />
+    <Property Name="InvoiceType" Type="nvarchar" MaxLength="200" />
+    <Property Name="InvoiceView" Type="nvarchar" MaxLength="50" />
+    <Property Name="IGenerator" Type="nvarchar" MaxLength="200" />
+    <Property Name="IViewer" Type="nvarchar" MaxLength="200" />
+    <Property Name="UploadService" Type="nvarchar" MaxLength="200" />
+    <Property Name="ParseService" Type="nvarchar" MaxLength="250" />
+    <Property Name="CssData" Type="ntext" />
+    <Property Name="CssLogo" Type="ntext" />
+    <Property Name="CssBackgr" Type="ntext" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsPub" Type="bit" />
+    <Property Name="IsCertify" Type="bit" />
+  </EntityType>
+  <EntityType Name="InvTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvCateID" Type="int" />
+    <Property Name="InvCateName" Type="nvarchar" MaxLength="200" />
+    <Property Name="TemplateName" Type="nvarchar" MaxLength="100" />
+    <Property Name="XmlFile" Type="ntext" />
+    <Property Name="XsltFile" Type="ntext" />
+    <Property Name="ServiceType" Type="nvarchar" MaxLength="200" />
+    <Property Name="InvoiceType" Type="nvarchar" MaxLength="200" />
+    <Property Name="InvoiceView" Type="nvarchar" MaxLength="50" />
+    <Property Name="IGenerator" Type="nvarchar" MaxLength="200" />
+    <Property Name="IViewer" Type="nvarchar" MaxLength="200" />
+    <Property Name="UploadService" Type="nvarchar" MaxLength="200" />
+    <Property Name="ParseService" Type="nvarchar" MaxLength="250" />
+    <Property Name="CssData" Type="ntext" />
+    <Property Name="CssLogo" Type="ntext" />
+    <Property Name="CssBackgr" Type="ntext" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsPub" Type="bit" />
+    <Property Name="IsCertify" Type="bit" />
+    <Property Name="IdTemp" Type="int" />
+  </EntityType>
+  <EntityType Name="KeyStores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComID" Type="int" />
+    <Property Name="Type" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Path" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="SlotIndex" Type="int" />
+    <Property Name="SerialCert" Type="nvarchar" MaxLength="100" />
+    <Property Name="KeyStoresOf" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RegisterTemp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComId" Type="int" />
+    <Property Name="InvCateID" Type="int" />
+    <Property Name="PatternOrder" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="InvPattern" Type="nvarchar" MaxLength="12" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="NameInvoice" Type="nvarchar" MaxLength="200" />
+    <Property Name="CssData" Type="ntext" />
+    <Property Name="CssLogo" Type="ntext" />
+    <Property Name="CssBackgr" Type="ntext" />
+    <Property Name="IsCertify" Type="bit" />
+    <Property Name="ICertifyProvider" Type="nvarchar" MaxLength="200" />
+    <Property Name="TempID" Type="int" />
+    <Property Name="IsUsed" Type="bit" />
+  </EntityType>
+  <EntityType Name="ServicePackages">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComID" Type="int" />
+    <Property Name="invPattern" Type="varchar" MaxLength="50" />
+    <Property Name="invSerial" Type="varchar" MaxLength="50" />
+    <Property Name="ServiceCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalInvoice" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="ServiceID" Type="varchar" MaxLength="50" />
+    <Property Name="IsActive" Type="int" />
+  </EntityType>
+  <EntityType Name="TaxAuthority">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Visible" Type="bit" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityContainer Name="hddt_qldv_HD_ModelStoreContainer">
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvCategory" EntityType="Self.InvCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceTemplate" EntityType="Self.InvoiceTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvTemplate" EntityType="Self.InvTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KeyStores" EntityType="Self.KeyStores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RegisterTemp" EntityType="Self.RegisterTemp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServicePackages" EntityType="Self.ServicePackages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaxAuthority" EntityType="Self.TaxAuthority" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

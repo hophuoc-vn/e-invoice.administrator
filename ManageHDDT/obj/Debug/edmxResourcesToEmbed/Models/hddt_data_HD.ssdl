@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hddt_data_HD_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Decision">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DecisionName" Type="nvarchar" MaxLength="200" />
+    <Property Name="DecisionNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="ComID" Type="int" />
+    <Property Name="ParentCompany" Type="nvarchar" MaxLength="200" />
+    <Property Name="ComName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ComAddress" Type="nvarchar" MaxLength="300" />
+    <Property Name="Requester" Type="ntext" />
+    <Property Name="Director" Type="nvarchar" MaxLength="200" />
+    <Property Name="SystemName" Type="ntext" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="SoftApplication" Type="nvarchar" MaxLength="500" />
+    <Property Name="ListInvPattern" Type="nvarchar" MaxLength="200" />
+    <Property Name="Purpose" Type="ntext" />
+    <Property Name="Workflow" Type="ntext" />
+    <Property Name="Responsibility" Type="ntext" />
+    <Property Name="EffectiveDate" Type="ntext" />
+    <Property Name="EffectDate" Type="nvarchar" MaxLength="500" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Status" Type="int" />
+    <Property Name="TechDepartment" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Destination" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="MailTemplate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComID" Type="int" />
+    <Property Name="EmailFrom" Type="varchar" MaxLength="100" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="500" />
+    <Property Name="Type" Type="int" />
+    <Property Name="TemContent" Type="ntext" />
+    <Property Name="EmailFromLabel" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'hddt_data_MB.dbo.ProductInv' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ProductInv">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="InvID" Type="int" />
+    <Property Name="Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="200" />
+    <Property Name="Price" Type="decimal" Precision="19" Scale="5" />
+    <Property Name="Quantity" Type="float" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="VATRate" Type="float" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="VATAmount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountAmount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ProdType" Type="int" />
+    <Property Name="IsSum" Type="int" />
+    <Property Name="CreateDate" Type="datetime2" Precision="7" />
+    <Property Name="Extra" Type="nvarchar" MaxLength="200" />
+    <Property Name="ComID" Type="int" />
+    <Property Name="Stt" Type="int" />
+    <Property Name="ConNo" Type="nvarchar" MaxLength="200" />
+    <Property Name="ExpDate" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Publish">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComID" Type="int" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ComAddress" Type="nvarchar" MaxLength="300" />
+    <Property Name="ComPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComTaxCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="RepresentPerson" Type="nvarchar" MaxLength="150" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="PublishDate" Type="datetime" />
+    <Property Name="TaxAuthorityCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="TaxAuthorityName" Type="nvarchar" MaxLength="200" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Delimiter" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="PublishInvoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ComId" Type="int" />
+    <Property Name="PublishID" Type="int" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="FromNo" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ToNo" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Status" Type="int" />
+    <Property Name="CurrentNo" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="InvSerial" Type="nvarchar" MaxLength="20" />
+    <Property Name="InvSerialPrefix" Type="nvarchar" MaxLength="2" />
+    <Property Name="InvSerialSuffix" Type="nvarchar" MaxLength="3" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="RegisterID" Type="int" />
+    <Property Name="RegisterName" Type="nvarchar" MaxLength="50" />
+    <Property Name="InvPattern" Type="nvarchar" MaxLength="12" />
+    <Property Name="InvCateName" Type="nvarchar" MaxLength="200" />
+    <Property Name="EndDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SendEmail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" />
+    <Property Name="CCEmail" Type="nvarchar" MaxLength="550" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="200" />
+    <Property Name="Body" Type="ntext" />
+    <Property Name="EmailFrom" Type="nvarchar" MaxLength="100" />
+    <Property Name="FileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="FileAttach" Type="varbinary(max)" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="int" />
+    <Property Name="SendedDate" Type="datetime" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Note" Type="nvarchar" MaxLength="150" />
+    <Property Name="InvToken" Type="nvarchar" MaxLength="30" />
+    <Property Name="BodySms" Type="nvarchar" MaxLength="200" />
+    <Property Name="SmsTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="SmsStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="userdata">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Type" Type="int" />
+    <Property Name="password" Type="nvarchar" MaxLength="64" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="256" />
+    <Property Name="IsApproved" Type="bit" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="FailedPassAttemptCount" Type="int" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Serials" Type="nvarchar" MaxLength="150" />
+    <Property Name="PasswordMB" Type="nvarchar" MaxLength="50" />
+    <Property Name="token" Type="varchar" MaxLength="255" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="XacNhanDangNhapMobile" Type="int" />
+  </EntityType>
+  <EntityType Name="VATInvoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvCateID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="No" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Data" Type="ntext" />
+    <Property Name="Serial" Type="nvarchar" MaxLength="12" />
+    <Property Name="Pattern" Type="nvarchar" MaxLength="12" />
+    <Property Name="ComID" Type="int" />
+    <Property Name="ComName" Type="nvarchar" MaxLength="200" />
+    <Property Name="ComPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="ComAddress" Type="nvarchar" MaxLength="300" />
+    <Property Name="ComTaxCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="ComBankName" Type="nvarchar" MaxLength="250" />
+    <Property Name="ComBankNo" Type="nvarchar" MaxLength="500" />
+    <Property Name="CusCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CusName" Type="nvarchar" MaxLength="2500" />
+    <Property Name="Buyer" Type="nvarchar" MaxLength="2500" />
+    <Property Name="CusAddress" Type="nvarchar" MaxLength="300" />
+    <Property Name="CusPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="CusBankName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CusBankNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CusTaxCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="Type" Type="int" />
+    <Property Name="Status" Type="int" />
+    <Property Name="PaymentMethod" Type="nvarchar" MaxLength="150" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="PublishDate" Type="datetime" />
+    <Property Name="Total" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="VATRate" Type="float" />
+    <Property Name="VATAmount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="AmountInWords" Type="nvarchar" MaxLength="255" />
+    <Property Name="PaymentStatus" Type="int" />
+    <Property Name="Converted" Type="int" />
+    <Property Name="KindOfService" Type="nvarchar" MaxLength="200" />
+    <Property Name="CusSignStatus" Type="int" />
+    <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="PublishBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra" Type="nvarchar" MaxLength="200" />
+    <Property Name="ArisingDate" Type="datetime" />
+    <Property Name="ProcessInvNote" Type="nvarchar" MaxLength="200" />
+    <Property Name="Fkey" Type="nvarchar" MaxLength="100" />
+    <Property Name="GrossValue" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="VatAmount0" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="GrossValue0" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="VatAmount5" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="GrossValue5" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="VatAmount10" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="GrossValue10" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="Certified" Type="bit" />
+    <Property Name="CertifiedID" Type="nvarchar" MaxLength="32" />
+    <Property Name="CertifiedData" Type="nvarchar" MaxLength="128" />
+    <Property Name="ComFax" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentName" Type="nvarchar" MaxLength="150" />
+    <Property Name="VATOther" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ChangeFees" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ExtraFees" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="OtherFees" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="PortalLink" Type="nvarchar" MaxLength="150" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ExchangeRate" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ShipTo" Type="nvarchar" MaxLength="250" />
+    <Property Name="CusEmail" Type="nvarchar" MaxLength="150" />
+    <Property Name="SO" Type="nvarchar" MaxLength="50" />
+    <Property Name="TransNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="NoneVat" Type="bit" />
+    <Property Name="Vat0" Type="bit" />
+    <Property Name="Vat5" Type="bit" />
+    <Property Name="Vat10" Type="bit" />
+    <Property Name="Extra1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Option" Type="ntext" />
+    <Property Name="Active" Type="int" />
+    <Property Name="KeyImport" Type="varchar" MaxLength="50" />
+    <Property Name="SttImport" Type="int" />
+    <Property Name="DecimalCustomType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="hddt_data_HD_ModelStoreContainer">
+    <EntitySet Name="Decision" EntityType="Self.Decision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MailTemplate" EntityType="Self.MailTemplate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Publish" EntityType="Self.Publish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PublishInvoice" EntityType="Self.PublishInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SendEmail" EntityType="Self.SendEmail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="userdata" EntityType="Self.userdata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VATInvoice" EntityType="Self.VATInvoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductInv" EntityType="Self.ProductInv" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ProductInv].[id] AS [id], 
+    [ProductInv].[InvID] AS [InvID], 
+    [ProductInv].[Code] AS [Code], 
+    [ProductInv].[Name] AS [Name], 
+    [ProductInv].[Remark] AS [Remark], 
+    [ProductInv].[Price] AS [Price], 
+    [ProductInv].[Quantity] AS [Quantity], 
+    [ProductInv].[Unit] AS [Unit], 
+    [ProductInv].[Total] AS [Total], 
+    [ProductInv].[VATRate] AS [VATRate], 
+    [ProductInv].[Discount] AS [Discount], 
+    [ProductInv].[VATAmount] AS [VATAmount], 
+    [ProductInv].[DiscountAmount] AS [DiscountAmount], 
+    [ProductInv].[Amount] AS [Amount], 
+    [ProductInv].[ProdType] AS [ProdType], 
+    [ProductInv].[IsSum] AS [IsSum], 
+    [ProductInv].[CreateDate] AS [CreateDate], 
+    [ProductInv].[Extra] AS [Extra], 
+    [ProductInv].[ComID] AS [ComID], 
+    [ProductInv].[Stt] AS [Stt], 
+    [ProductInv].[ConNo] AS [ConNo], 
+    [ProductInv].[ExpDate] AS [ExpDate]
+    FROM [dbo].[ProductInv] AS [ProductInv]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

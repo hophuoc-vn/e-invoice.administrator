@@ -1,0 +1,391 @@
+﻿@{
+    ViewBag.Title = "Điều hành ► Quản lý Hđđt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- #region Styling refs -->
+<link href="~/Content/bootstrap.Toggle/bootstrap4-toggle.min.css" rel="stylesheet" />
+<link href="~/Content/custom/co-inv-mgmt-site.operating.css" rel="stylesheet" />
+<link href="~/Content/codemirror/codemirror.css" rel="stylesheet" />
+<link href="~/Content/codemirror/addon/dialog/dialog.css" rel="stylesheet" />
+<link href="~/Content/codemirror/addon/fold/foldgutter.css" rel="stylesheet" />
+<link href="~/Content/codemirror/addon/hint/show-hint.css" rel="stylesheet" />
+<link href="~/Content/codemirror/addon/search/matchesonscrollbar.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/abcdef.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/blackboard.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/cobalt.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/darcula.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/duotone-light.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/eclipse.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/elegant.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/idea.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/mbo.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/mdn-like.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/neat.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/neo.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/night.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/pastel-on-dark.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/rubyblue.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/the-matrix.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/ttcn.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/vibrant-ink.css" rel="stylesheet" />
+<link href="~/Content/codemirror/theme/yonce.css" rel="stylesheet" />
+<!-- #endregion -->
+<!-- #region Scripting refs -->
+<script src="~/Scripts/bootstrap.Toggle/bootstrap4-toggle.min.js"></script>
+<script src="~/Scripts/custom/co-inv-mgmt.operating.js"></script>
+<script src="~/Scripts/codemirror/codemirror.js"></script>
+<script src="~/Scripts/codemirror/addon/comment/comment.js"></script>
+<script src="~/Scripts/codemirror/addon/dialog/dialog.js"></script>
+<script src="~/Scripts/codemirror/addon/display/autorefresh.js"></script>
+<script src="~/Scripts/codemirror/addon/edit/closebrackets.js"></script>
+<script src="~/Scripts/codemirror/addon/edit/closetag.js"></script>
+<script src="~/Scripts/codemirror/addon/edit/matchbrackets.js"></script>
+<script src="~/Scripts/codemirror/addon/edit/matchtags.js"></script>
+<script src="~/Scripts/codemirror/addon/fold/brace-fold.js"></script>
+<script src="~/Scripts/codemirror/addon/fold/comment-fold.js"></script>
+<script src="~/Scripts/codemirror/addon/fold/foldcode.js"></script>
+<script src="~/Scripts/codemirror/addon/fold/foldgutter.js"></script>
+<script src="~/Scripts/codemirror/addon/hint/show-hint.js"></script>
+<script src="~/Scripts/codemirror/addon/hint/css-hint.js"></script>
+<script src="~/Scripts/codemirror/addon/hint/xml-hint.js"></script>
+<script src="~/Scripts/codemirror/addon/hint/javascript-hint.js"></script>
+<script src="~/Scripts/codemirror/addon/hint/html-hint.js"></script>
+<script src="~/Scripts/codemirror/addon/scroll/annotatescrollbar.js"></script>
+<script src="~/Scripts/codemirror/addon/search/matchesonscrollbar.js"></script>
+<script src="~/Scripts/codemirror/addon/search/search.js"></script>
+<script src="~/Scripts/codemirror/addon/search/searchcursor.js"></script>
+<script src="~/Scripts/codemirror/addon/selection/active-line.js"></script>
+<script src="~/Scripts/codemirror/addon/selection/mark-selection.js"></script>
+<script src="~/Scripts/codemirror/mode/css/css.js"></script>
+<script src="~/Scripts/codemirror/mode/xml/xml.js"></script>
+<script src="~/Scripts/codemirror/mode/javascript/javascript.js"></script>
+<script src="~/Scripts/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="~/Scripts/jquery.PrintArea/jquery.PrintArea.js"></script>
+<script src="~/Scripts/jsbeautifier/beautify-css.js"></script>
+<script src="~/Scripts/jsbeautifier/beautify-html.js"></script>
+<script src="~/Scripts/paginathing/paginathing.js"></script>
+<!-- #endregion -->
+
+<section class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card m-b-30">
+                <div class="card-body">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSrchMeth">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSrchMeth" aria-expanded="false" aria-controls="collapseSrchMeth">
+                                        <i class="more-less fa fa-angle-up"></i>
+                                        Bảng tìm kiếm
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSrchMeth" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingSrchMeth">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12 m-b-10">
+                                            <div class="dx-field">
+                                                <div class="dx-field-label">Máy chủ</div>
+                                                <div class="dx-field-value">
+                                                    <div id="db-sel"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                                <div class="panel panel-default">
+                                                    <div class="panel panel-default">
+                                                        <div class="panel-heading" role="tab" id="headingCoIdSrch">
+                                                            <h4 class="panel-title">
+                                                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseCoIdSrch" aria-expanded="false" aria-controls="collapseCoIdSrch">
+                                                                    <i class="more-less fa fa-angle-up"></i>
+                                                                    <i class="fas fa-search i-fa-w-16"></i>Tìm theo danh sách
+                                                                </a>
+                                                            </h4>
+                                                        </div>
+                                                        <div id="collapseCoIdSrch" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingCoIdSrch">
+                                                            <div class="panel-body">
+                                                                <div class="d-inline-flex w-100-pc">
+                                                                    <div class="dx-field w-100-vw">
+                                                                        <div class="dx-field-value w-100-pc">
+                                                                            <div id="co-list-dropdown"></div>
+                                                                            <div id="co-list-dropdown-indicator"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-heading" role="tab" id="headingCusRefSrch">
+                                                        <h4 class="panel-title">
+                                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseCusRefSrch" aria-expanded="true" aria-controls="collapseCusRefSrch">
+                                                                <i class="more-less fa fa-angle-down"></i>
+                                                                <i class="fas fa-search i-fa-w-16"></i>Tìm theo mã khách hàng
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="collapseCusRefSrch" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingCusRefSrch">
+                                                        <div class="panel-body">
+                                                            <div class="d-inline-flex" id="search-container">
+                                                                <div class="dx-field w-fill-available">
+                                                                    <div class="dx-field-label w-auto">Mã khách hàng:</div>
+                                                                    <div class="dx-field-value float-left" id="search-box-container">
+                                                                        <div id="cus-search-box"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dx-field w-fit-content m-l-1-pc">
+                                                                    <div id="cus-search-btn" class="float-right"></div>
+                                                                </div>
+                                                                <div id="cus-search-indicator" class="m-l-2-pc"></div>
+                                                            </div>
+                                                            <div class="dx-field d-inline-flex w-40-vw">
+                                                                <div class="dx-field-value w-100-pc">
+                                                                    <div id="co-list-select"></div>
+                                                                    <div id="co-list-select-indicator"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-t-10">
+                        <div class="col-lg-12">
+                            <h4 class="mt-0 header-title fit-w"><i class="fas fa-database i-fa-w-14"></i>Dữ liệu quản lý hđ</h4>
+                            <div id="co-data-indicator"></div>
+                            <div class="text-center p-0 w-100-pc d-inline-block">
+                                <h3 class="emph-title" id="co-name-label"></h3>
+                                <h4 class="emph-sub-title" id="co-name-sub-label"></h4>
+                                <h5 class="sub-emph-title ux-blue" id="co-inv-mgmt-site-label"></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab" aria-controls="first" aria-selected="true">Thông tin công ty</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="second-tab" data-toggle="tab" href="#second" role="tab" aria-controls="second" aria-selected="false">Thông tin phát hành</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="third-tab" data-toggle="tab" href="#third" role="tab" aria-controls="third" aria-selected="false">Cập nhật mẫu hđ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="fourth-tab" data-toggle="tab" href="#fourth" role="tab" aria-controls="fourth" aria-selected="false">Thư điện tử phát hành hđ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="fifth-tab" data-toggle="tab" href="#fifth" role="tab" aria-controls="fifth" aria-selected="false">Chứng thư số</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="sixth-tab" data-toggle="tab" href="#sixth" role="tab" aria-controls="sixth" aria-selected="false">Khóa tính năng</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content p-t-10">
+                        <div class="tab-pane fade active show" id="first" role="tabpanel" aria-labelledby="first-tab">
+                            <div class="col-lg-12">
+                                <div class="card-body">
+                                    <div id="co-form-container"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="second-tab">
+                            <div class="col-lg-12">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title fit-w"><i class="fa fa-columns i-fa-w-16"></i>Bảng kê thông báo phát hành</h4>
+                                    <div id="pub-grid" class="clear-both"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="third" role="tabpanel" aria-labelledby="third-tab">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                <i class="more-less fa fa-angle-up"></i>
+                                                Tùy chỉnh
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="dx-field">
+                                                        <div class="dx-field-label">Chọn mẫu hđ</div>
+                                                        <div class="dx-field-value">
+                                                            <div id="pub-tmpl-select"></div>
+                                                            <div id="pub-tmpl-select-indicator"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="dx-field">
+                                                        <div class="dx-field-label">Chọn giao diện</div>
+                                                        <div class="dx-field-value">
+                                                            <div id="theme-select"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 p-t-10">
+                                                    <div class="dx-field">
+                                                        <div class="dx-field-value w-100-pc">
+                                                            <div id="inv-list-dropdown"></div>
+                                                            <div id="inv-list-dropdown-indicator"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <i class="more-less fa fa-angle-up"></i>
+                                                CSS
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <h4 class="mt-2 mb-0 header-title fit-w"><i class="fas fa-code i-fa-w-20"></i>Css mẫu hđ</h4>
+                                                    <div class="dx-field text-right">
+                                                        <div id="tmpl-css-undo-btn"></div>
+                                                        <div id="tmpl-css-redo-btn"></div>
+                                                        <div id="tmpl-css-fold-btn"></div>
+                                                        <div id="tmpl-css-unfold-btn"></div>
+                                                        <div id="tmpl-css-beautify-btn"></div>
+                                                    </div>
+                                                    <div class="m-t-10">
+                                                        <textarea class="form-control" rows="15" id="tmpl-css"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <h4 class="mt-2 mb-0 header-title fit-w"><i class="fas fa-code i-fa-w-20"></i>Css logo hđ</h4>
+                                                    <div class="dx-field text-right">
+                                                        <div id="logo-css-undo-btn"></div>
+                                                        <div id="logo-css-redo-btn"></div>
+                                                        <div id="logo-css-fold-btn"></div>
+                                                        <div id="logo-css-unfold-btn"></div>
+                                                        <div id="logo-css-beautify-btn"></div>
+                                                    </div>
+                                                    <div class="m-t-10">
+                                                        <textarea class="form-control" rows="15" id="logo-css"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <h4 class="mt-2 mb-0 header-title fit-w"><i class="fas fa-code i-fa-w-20"></i>Css nền hđ</h4>
+                                                    <div class="dx-field text-right">
+                                                        <div id="bgr-css-undo-btn"></div>
+                                                        <div id="bgr-css-redo-btn"></div>
+                                                        <div id="bgr-css-fold-btn"></div>
+                                                        <div id="bgr-css-unfold-btn"></div>
+                                                        <div id="bgr-css-beautify-btn"></div>
+                                                    </div>
+                                                    <div class="m-t-10">
+                                                        <textarea class="form-control" rows="15" id="bgr-css"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 m-t-15 m-b-15">
+                                        <div class="dx-field text-center">
+                                            <div id="tmpl-update-btn"></div>
+                                            <div id="tmpl-view-btn"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                                <i class="more-less fa fa-angle-up"></i>
+                                                HTML
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <h4 class="mt-2 mb-0 header-title fit-w"><i class="fas fa-code i-fa-w-20"></i>Xslt mẫu hđ</h4>
+                                                    <div class="dx-field text-right">
+                                                        <div id="tmpl-html-undo-btn"></div>
+                                                        <div id="tmpl-html-redo-btn"></div>
+                                                        <div id="tmpl-html-fold-btn"></div>
+                                                        <div id="tmpl-html-unfold-btn"></div>
+                                                        <div id="tmpl-html-beautify-btn"></div>
+                                                    </div>
+                                                    <div class="m-t-10">
+                                                        <textarea class="form-control" rows="25" id="tmpl-html"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="fourth" role="tabpanel" aria-labelledby="fourth-tab">
+                            <div class="col-lg-12">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title fit-w"><i class="fa fa-columns i-fa-w-16"></i>Bảng kê thư điện tử phát hành hđ</h4>
+                                    <div id="inv-pub-st-table" class="clear-both"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="fifth" role="tabpanel" aria-labelledby="fifth-tab">
+                            <div class="col-lg-12">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title fit-w"><i class="fa fa-columns i-fa-w-16"></i>Bảng kê chứng thư số</h4>
+                                    <div id="digi-cert-table" class="clear-both"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="sixth" role="tabpanel" aria-labelledby="sixth-tab">
+                            <div class="col-lg-12">
+                                <div class="card-body">
+                                    <h4 class="mt-0 header-title fit-w"><i class="fa fa-columns i-fa-w-16"></i>Bảng kê khóa tính năng</h4>
+                                    <div id="config-table" class="clear-both"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade w-100-vw" id="invTmplViewModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div id="inv-tmpl-container" class="d-none"></div>
+                <ul id="pages-container" class="p-0"></ul>
+            </div>
+            <div class="modal-footer d-inline-block">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                <input type="checkbox" id="toggle-orig-inv" data-toggle="toggle" data-onstyle="primary" data-on="Hiện hđ gốc" data-off="Ẩn hđ gốc">
+                <button type="button" class="btn btn-info float-right" onclick="printInvTmpl()"><i class="fas fa-print i-fa-w-15"></i>In</button>
+                <button type="button" class="btn btn-primary float-right" onclick="expInvTmpl()"><i class="far fa-file-pdf i-fa-w-11"></i>Xuất PDF</button>
+            </div>
+        </div>
+    </div>
+</div>

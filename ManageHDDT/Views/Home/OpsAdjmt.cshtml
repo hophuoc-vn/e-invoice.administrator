@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Quản trị";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- #region Styling refs -->
+<link href="~/Content/custom/ops-adjmt.home.css" rel="stylesheet" />
+<!-- #endregion -->
+<!-- #region Scripting refs -->
+<script src="~/Scripts/custom/ops-adjmt.home.js"></script>
+<!-- #endregion -->
+
+<section class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card m-b-30">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="more-less fa fa-angle-up"></i>
+                                    Thông tin cá nhân
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div id="form-container" class="m-t-20"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @if (Session["User"].ToString() == "beta" || Session["Master"].ToString() == "1")
+                    {
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        <i class="more-less fa fa-angle-down"></i>
+                                        Chức vụ
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h4 class="mt-0 header-title fit-w"><i class="fa fa-columns i-fa-w-16"></i>Bảng kê chức vụ</h4>
+                                            <div id="role-auth-table-indicator"></div>
+                                            <div id="role-auth-table" class="clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                        <i class="more-less fa fa-angle-down"></i>
+                                        Cấp bậc
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h4 class="mt-0 header-title fit-w"><i class="fa fa-columns i-fa-w-16"></i>Bảng kê cấp bậc</h4>
+                                            <div id="rank-auth-table" class="clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                        <i class="more-less fa fa-angle-down"></i>
+                                        Chức năng
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h4 class="mt-0 header-title fit-w"><i class="fa fa-columns i-fa-w-16"></i>Bảng kê chức năng</h4>
+                                            <div id="func-auth-table" class="clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

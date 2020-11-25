@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hddt_dhql_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="dhql_functional_authority">
+    <Key>
+      <PropertyRef Name="card" />
+    </Key>
+    <Property Name="card" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id" Type="Int32" />
+    <Property Name="root_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="is_authorized" Type="Boolean" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Precision="3" />
+    <Property Name="flag" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="dhql_rank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="value" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="is_master" Type="Boolean" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Precision="3" />
+    <Property Name="flag" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="dhql_role">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="rank" Type="Int16" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Precision="3" />
+    <Property Name="flag" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="dhql_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="login_token" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="functions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="modify_date" Type="DateTime" Precision="3" />
+    <Property Name="flag" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="hddt_dhql_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="dhql_functional_authority" EntityType="Self.dhql_functional_authority" />
+    <EntitySet Name="dhql_rank" EntityType="Self.dhql_rank" />
+    <EntitySet Name="dhql_role" EntityType="Self.dhql_role" />
+    <EntitySet Name="dhql_user" EntityType="Self.dhql_user" />
+  </EntityContainer>
+</Schema>

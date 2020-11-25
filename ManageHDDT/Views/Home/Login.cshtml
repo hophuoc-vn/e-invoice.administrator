@@ -1,0 +1,85 @@
+﻿@{
+    Layout = "~/Views/Shared/_Login.cshtml";
+}
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+            <form class="login100-form validate-form flex-sb flex-w" action="@Url.Action("Login", "Home")" method="post" autocomplete="off">
+                <span class="login100-form-title p-b-32" id="login-form-title">
+                    Hđđt Mắt Bão
+                </span>
+
+                <span class="txt1 p-b-11">
+                    Tên người dùng
+                </span>
+                <div class="wrap-input100 validate-input m-b-36">
+                    <input class="input100" type="text" name="username" id="username">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <span class="txt1 p-b-11">
+                    Mật khẩu
+                </span>
+                <div class="wrap-input100 validate-input m-b-36">
+                    <span class="btn-show-pass">
+                        <i class="fa fa-eye"></i>
+                    </span>
+                    <input class="input100" type="password" name="pwd" id="pwd">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="flex-sb-m w-full p-b-36">
+                    @*<div class="contact100-form-checkbox">
+                            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+                            <label class="label-checkbox100" for="ckb1" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+                                Ghi nhớ đăng nhập
+                            </label>
+                        </div>*@
+                    <div class="m-l-75-pc">
+                        <a href="#" class="txt3 txt-deco-none">
+                        @*<a href="#modal" data-toggle="modal" data-backdrop="static" data-keyboard="false" class="txt3 txt-deco-none">*@
+                            Quên mật khẩu?
+                        </a>
+                    </div>
+                </div>
+
+                <span id="login-error-msg" class="txt1 p-b-18 ux-red font-weight-bold w-100 text-center">
+                    @ViewBag.Message
+                </span>
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn w-100">
+                        Đăng nhập
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade center-modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header dis-block">
+                <span class="modal-title font-20" id="modal-label">Đổi mật khẩu mới</span>
+                <button type="button" class="close" data-dismiss="modal" id="close-btn" aria-label="Đóng">
+                    <span aria-hidden="true" class="font-size-xxl">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="reset-username">Email người dùng</label>
+                    <input type="email" class="form-control" name="user-email" id="user-email" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <span id="validation-message" class="txt1 p-b-18 font-weight-bold"></span>
+                </div>
+                <div class="form-group text-center">
+                    <button type="button" class="btn btn-secondary" id="cancel-btn" data-dismiss="modal">Hủy</button>
+                    <button type="button" class="btn btn-primary" id="send-btn">Gửi email</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hddt_qldv_MB_ModelStoreContainer" CdmEntityContainer="hddt_qldv_MB_Entities">
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="BankAccountName" ColumnName="BankAccountName" />
+          <ScalarProperty Name="BankName" ColumnName="BankName" />
+          <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="RepresentPerson" ColumnName="RepresentPerson" />
+          <ScalarProperty Name="TaxAuthorityCode" ColumnName="TaxAuthorityCode" />
+          <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="SignatureImage" ColumnName="SignatureImage" />
+          <ScalarProperty Name="Domain" ColumnName="Domain" />
+          <ScalarProperty Name="Approved" ColumnName="Approved" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+          <ScalarProperty Name="MailContact" ColumnName="MailContact" />
+          <ScalarProperty Name="ParentName" ColumnName="ParentName" />
+          <ScalarProperty Name="PortalLink" ColumnName="PortalLink" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="ExtraKey" ColumnName="ExtraKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configs">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.Config">
+        <MappingFragment StoreEntitySet="Config">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvCategories">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.InvCategory">
+        <MappingFragment StoreEntitySet="InvCategory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="InvPattern" ColumnName="InvPattern" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsPub" ColumnName="IsPub" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceTemplates">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.InvoiceTemplate">
+        <MappingFragment StoreEntitySet="InvoiceTemplate">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InvCateID" ColumnName="InvCateID" />
+          <ScalarProperty Name="InvCateName" ColumnName="InvCateName" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="XmlFile" ColumnName="XmlFile" />
+          <ScalarProperty Name="XsltFile" ColumnName="XsltFile" />
+          <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+          <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+          <ScalarProperty Name="InvoiceView" ColumnName="InvoiceView" />
+          <ScalarProperty Name="IGenerator" ColumnName="IGenerator" />
+          <ScalarProperty Name="IViewer" ColumnName="IViewer" />
+          <ScalarProperty Name="UploadService" ColumnName="UploadService" />
+          <ScalarProperty Name="ParseService" ColumnName="ParseService" />
+          <ScalarProperty Name="CssData" ColumnName="CssData" />
+          <ScalarProperty Name="CssLogo" ColumnName="CssLogo" />
+          <ScalarProperty Name="CssBackgr" ColumnName="CssBackgr" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="IsPub" ColumnName="IsPub" />
+          <ScalarProperty Name="IsCertify" ColumnName="IsCertify" />
+          <ScalarProperty Name="TemCateID" ColumnName="TemCateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvTemplates">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.InvTemplate">
+        <MappingFragment StoreEntitySet="InvTemplate">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InvCateID" ColumnName="InvCateID" />
+          <ScalarProperty Name="InvCateName" ColumnName="InvCateName" />
+          <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+          <ScalarProperty Name="XmlFile" ColumnName="XmlFile" />
+          <ScalarProperty Name="XsltFile" ColumnName="XsltFile" />
+          <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+          <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+          <ScalarProperty Name="InvoiceView" ColumnName="InvoiceView" />
+          <ScalarProperty Name="IGenerator" ColumnName="IGenerator" />
+          <ScalarProperty Name="IViewer" ColumnName="IViewer" />
+          <ScalarProperty Name="UploadService" ColumnName="UploadService" />
+          <ScalarProperty Name="ParseService" ColumnName="ParseService" />
+          <ScalarProperty Name="CssData" ColumnName="CssData" />
+          <ScalarProperty Name="CssLogo" ColumnName="CssLogo" />
+          <ScalarProperty Name="CssBackgr" ColumnName="CssBackgr" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="IsPub" ColumnName="IsPub" />
+          <ScalarProperty Name="IsCertify" ColumnName="IsCertify" />
+          <ScalarProperty Name="IdTemp" ColumnName="IdTemp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KeyStores">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.KeyStore">
+        <MappingFragment StoreEntitySet="KeyStores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="SlotIndex" ColumnName="SlotIndex" />
+          <ScalarProperty Name="SerialCert" ColumnName="SerialCert" />
+          <ScalarProperty Name="KeyStoresOf" ColumnName="KeyStoresOf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Notifications">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.Notification">
+        <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegisterTemps">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.RegisterTemp">
+        <MappingFragment StoreEntitySet="RegisterTemp">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ComId" ColumnName="ComId" />
+          <ScalarProperty Name="InvCateID" ColumnName="InvCateID" />
+          <ScalarProperty Name="PatternOrder" ColumnName="PatternOrder" />
+          <ScalarProperty Name="InvPattern" ColumnName="InvPattern" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameInvoice" ColumnName="NameInvoice" />
+          <ScalarProperty Name="CssData" ColumnName="CssData" />
+          <ScalarProperty Name="CssLogo" ColumnName="CssLogo" />
+          <ScalarProperty Name="CssBackgr" ColumnName="CssBackgr" />
+          <ScalarProperty Name="IsCertify" ColumnName="IsCertify" />
+          <ScalarProperty Name="ICertifyProvider" ColumnName="ICertifyProvider" />
+          <ScalarProperty Name="TempID" ColumnName="TempID" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicePackages">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.ServicePackage">
+        <MappingFragment StoreEntitySet="ServicePackages">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="invPattern" ColumnName="invPattern" />
+          <ScalarProperty Name="invSerial" ColumnName="invSerial" />
+          <ScalarProperty Name="ServiceCode" ColumnName="ServiceCode" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="TotalInvoice" ColumnName="TotalInvoice" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaxAuthorities">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.TaxAuthority">
+        <MappingFragment StoreEntitySet="TaxAuthority">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="City" ColumnName="City" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Units">
+      <EntityTypeMapping TypeName="hddt_qldv_MB_Model.Unit">
+        <MappingFragment StoreEntitySet="Unit">
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

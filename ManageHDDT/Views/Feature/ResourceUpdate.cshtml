@@ -1,0 +1,121 @@
+﻿@{
+    ViewBag.Title = "Tính năng ► Nhập liệu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- #region Styling refs -->
+<link href="~/Content/custom/resource-update.feature.css" rel="stylesheet" />
+<!-- #endregion -->
+<!-- #region Scripting refs -->
+<script src="~/Scripts/custom/resource-update.feature.js"></script>
+<!-- #endregion -->
+
+<section class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card m-b-30">
+                <div class="card-body">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="more-less fa fa-angle-down"></i>
+                                        Lead
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div id="upload-block">
+                                                <div id="file-uploader"></div>
+                                            </div>
+                                            <div id="upload-note">
+                                                <ul>
+                                                    <li class="note">Định dạng file cho phép: <span>.xls, .xlsx</span>.</li>
+                                                    <li class="note">Kích thước file tối đa: <span>40 MB</span>.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSrchMeth">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSrchMeth" aria-expanded="false" aria-controls="collapseSrchMeth">
+                                        <i class="more-less fa fa-angle-up"></i>
+                                        Bảng tìm kiếm
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseSrchMeth" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingSrchMeth">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-lg-6 m-b-10">
+                                            <div class="dx-field">
+                                                <div class="dx-field-label">Máy chủ</div>
+                                                <div class="dx-field-value">
+                                                    <div id="db-sel"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 m-b-10">
+                                            <div class="dx-field">
+                                                <div class="dx-field-label">Trường dữ liệu</div>
+                                                <div class="dx-field-value">
+                                                    <div id="field-sel"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10 p-t-10">
+                            <h4 class="header-title fit-w"><i class="fa fa-columns i-fa-w-16"></i>Bảng kê dữ liệu</h4>
+                            <div id="data-table-indicator"></div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="dx-field">
+                                <div class="dx-field-value w-15-pc fl-l d-inline-flex">
+                                    <div id="prev-rec-qty"></div>
+                                </div>
+                                <div class="dx-field-value w-70-pc fl-l">
+                                    <div id="rec-qty-sel"></div>
+                                </div>
+                                <div class="dx-field-value w-15-pc">
+                                    <div id="next-rec-qty"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 m-t-10">
+                            <div id="data-table"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade w-100-vw" id="emailTmplViewModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabel">Mẫu thư điện tử</h4>
+                <button type="button" class="close outline-none" data-dismiss="modal" aria-label="Đóng">
+                    <span aria-hidden="true" class="font-size-xxl">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="email-tmpl-container"></div>
+            </div>
+        </div>
+    </div>
+</div>

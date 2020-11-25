@@ -1,0 +1,20 @@
+﻿a:hover {
+    text-decoration: none;
+    color: #00A4E4;
+}
+
+#login-form-title {
+    background: linear-gradient(to top, #333333 45%, #00A4E4 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: -webkit-xxx-large;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.center-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

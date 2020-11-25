@@ -1,0 +1,607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="hddt_qldv_tester_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="300" />
+          <Property Name="BankAccountName" Type="nvarchar" MaxLength="200" />
+          <Property Name="BankName" Type="nvarchar" MaxLength="150" />
+          <Property Name="BankNumber" Type="nvarchar" MaxLength="250" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="150" />
+          <Property Name="Descriptions" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="100" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="100" />
+          <Property Name="RepresentPerson" Type="nvarchar" MaxLength="150" />
+          <Property Name="TaxAuthorityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="TaxCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SignatureImage" Type="nvarchar" MaxLength="200" />
+          <Property Name="Domain" Type="nvarchar" MaxLength="200" />
+          <Property Name="Approved" Type="bit" />
+          <Property Name="IsUsed" Type="bit" />
+          <Property Name="MailContact" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParentName" Type="nvarchar" MaxLength="200" />
+          <Property Name="PortalLink" Type="nvarchar" MaxLength="150" />
+          <Property Name="Type" Type="int" />
+          <Property Name="DepartmentId" Type="int" />
+          <Property Name="GroupName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExtraKey" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComID" Type="int" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="Value" Type="ntext" />
+        </EntityType>
+        <EntityType Name="InvCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="InvPattern" Type="nvarchar" MaxLength="20" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsPub" Type="bit" />
+        </EntityType>
+        <EntityType Name="InvoiceTemplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="InvCateID" Type="int" />
+          <Property Name="InvCateName" Type="nvarchar" MaxLength="200" />
+          <Property Name="TemplateName" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlFile" Type="ntext" />
+          <Property Name="XsltFile" Type="ntext" />
+          <Property Name="ServiceType" Type="nvarchar" MaxLength="200" />
+          <Property Name="InvoiceType" Type="nvarchar" MaxLength="200" />
+          <Property Name="InvoiceView" Type="nvarchar" MaxLength="50" />
+          <Property Name="IGenerator" Type="nvarchar" MaxLength="200" />
+          <Property Name="IViewer" Type="nvarchar" MaxLength="200" />
+          <Property Name="UploadService" Type="nvarchar" MaxLength="200" />
+          <Property Name="ParseService" Type="nvarchar" MaxLength="250" />
+          <Property Name="CssData" Type="ntext" />
+          <Property Name="CssLogo" Type="ntext" />
+          <Property Name="CssBackgr" Type="ntext" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsPub" Type="bit" />
+          <Property Name="IsCertify" Type="bit" />
+          <Property Name="TemCateID" Type="int" />
+        </EntityType>
+        <EntityType Name="InvTemplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvCateID" Type="int" />
+          <Property Name="InvCateName" Type="nvarchar" MaxLength="200" />
+          <Property Name="TemplateName" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlFile" Type="ntext" />
+          <Property Name="XsltFile" Type="ntext" />
+          <Property Name="ServiceType" Type="nvarchar" MaxLength="200" />
+          <Property Name="InvoiceType" Type="nvarchar" MaxLength="200" />
+          <Property Name="InvoiceView" Type="nvarchar" MaxLength="50" />
+          <Property Name="IGenerator" Type="nvarchar" MaxLength="200" />
+          <Property Name="IViewer" Type="nvarchar" MaxLength="200" />
+          <Property Name="UploadService" Type="nvarchar" MaxLength="200" />
+          <Property Name="ParseService" Type="nvarchar" MaxLength="250" />
+          <Property Name="CssData" Type="ntext" />
+          <Property Name="CssLogo" Type="ntext" />
+          <Property Name="CssBackgr" Type="ntext" />
+          <Property Name="ImagePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="IsPub" Type="bit" />
+          <Property Name="IsCertify" Type="bit" />
+          <Property Name="IdTemp" Type="int" />
+        </EntityType>
+        <EntityType Name="KeyStores">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComID" Type="int" />
+          <Property Name="Type" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Path" Type="nvarchar" MaxLength="200" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="SlotIndex" Type="int" />
+          <Property Name="SerialCert" Type="nvarchar" MaxLength="100" />
+          <Property Name="KeyStoresOf" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="RegisterTemp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComId" Type="int" />
+          <Property Name="InvCateID" Type="int" />
+          <Property Name="PatternOrder" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="InvPattern" Type="nvarchar" MaxLength="12" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="NameInvoice" Type="nvarchar" MaxLength="200" />
+          <Property Name="CssData" Type="ntext" />
+          <Property Name="CssLogo" Type="ntext" />
+          <Property Name="CssBackgr" Type="ntext" />
+          <Property Name="IsCertify" Type="bit" />
+          <Property Name="ICertifyProvider" Type="nvarchar" MaxLength="200" />
+          <Property Name="TempID" Type="int" />
+          <Property Name="IsUsed" Type="bit" />
+        </EntityType>
+        <EntityType Name="ServicePackages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ComID" Type="int" />
+          <Property Name="invPattern" Type="varchar" MaxLength="50" />
+          <Property Name="invSerial" Type="varchar" MaxLength="50" />
+          <Property Name="ServiceCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+          <Property Name="TotalInvoice" Type="int" />
+          <Property Name="Status" Type="int" />
+          <Property Name="ServiceID" Type="varchar" MaxLength="50" />
+          <Property Name="IsActive" Type="int" />
+        </EntityType>
+        <EntityType Name="TaxAuthority">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Visible" Type="bit" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityContainer Name="hddt_qldv_tester_ModelStoreContainer">
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvCategory" EntityType="Self.InvCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceTemplate" EntityType="Self.InvoiceTemplate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvTemplate" EntityType="Self.InvTemplate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KeyStores" EntityType="Self.KeyStores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RegisterTemp" EntityType="Self.RegisterTemp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ServicePackages" EntityType="Self.ServicePackages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TaxAuthority" EntityType="Self.TaxAuthority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hddt_qldv_tester_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="BankAccountName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="BankName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="BankNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPerson" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Descriptions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RepresentPerson" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TaxAuthorityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SignatureImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Domain" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Approved" Type="Boolean" />
+          <Property Name="IsUsed" Type="Boolean" />
+          <Property Name="MailContact" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParentName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PortalLink" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="DepartmentId" Type="Int32" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExtraKey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Config">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComID" Type="Int32" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InvCategory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="InvPattern" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsPub" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="InvoiceTemplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="InvCateID" Type="Int32" />
+          <Property Name="InvCateName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TemplateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XsltFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceView" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IGenerator" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IViewer" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UploadService" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ParseService" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CssData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CssLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CssBackgr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsPub" Type="Boolean" />
+          <Property Name="IsCertify" Type="Boolean" />
+          <Property Name="TemCateID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="InvTemplate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InvCateID" Type="Int32" />
+          <Property Name="InvCateName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TemplateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XsltFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceView" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IGenerator" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IViewer" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UploadService" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ParseService" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CssData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CssLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CssBackgr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="IsPub" Type="Boolean" />
+          <Property Name="IsCertify" Type="Boolean" />
+          <Property Name="IdTemp" Type="Int32" />
+        </EntityType>
+        <EntityType Name="KeyStore">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComID" Type="Int32" />
+          <Property Name="Type" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Path" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SlotIndex" Type="Int32" />
+          <Property Name="SerialCert" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="KeyStoresOf" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="RegisterTemp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComId" Type="Int32" />
+          <Property Name="InvCateID" Type="Int32" />
+          <Property Name="PatternOrder" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="InvPattern" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NameInvoice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CssData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CssLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CssBackgr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsCertify" Type="Boolean" />
+          <Property Name="ICertifyProvider" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TempID" Type="Int32" />
+          <Property Name="IsUsed" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ServicePackage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ComID" Type="Int32" />
+          <Property Name="invPattern" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="invSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TotalInvoice" Type="Int32" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="ServiceID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TaxAuthority">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Visible" Type="Boolean" />
+          <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="hddt_qldv_tester_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="Configs" EntityType="Self.Config" />
+          <EntitySet Name="InvCategories" EntityType="Self.InvCategory" />
+          <EntitySet Name="InvoiceTemplates" EntityType="Self.InvoiceTemplate" />
+          <EntitySet Name="InvTemplates" EntityType="Self.InvTemplate" />
+          <EntitySet Name="KeyStores" EntityType="Self.KeyStore" />
+          <EntitySet Name="Notifications" EntityType="Self.Notification" />
+          <EntitySet Name="RegisterTemps" EntityType="Self.RegisterTemp" />
+          <EntitySet Name="ServicePackages" EntityType="Self.ServicePackage" />
+          <EntitySet Name="TaxAuthorities" EntityType="Self.TaxAuthority" />
+          <EntitySet Name="Units" EntityType="Self.Unit" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hddt_qldv_tester_ModelStoreContainer" CdmEntityContainer="hddt_qldv_tester_Entities">
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BankAccountName" ColumnName="BankAccountName" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankNumber" ColumnName="BankNumber" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Descriptions" ColumnName="Descriptions" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="RepresentPerson" ColumnName="RepresentPerson" />
+                <ScalarProperty Name="TaxAuthorityCode" ColumnName="TaxAuthorityCode" />
+                <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="SignatureImage" ColumnName="SignatureImage" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+                <ScalarProperty Name="MailContact" ColumnName="MailContact" />
+                <ScalarProperty Name="ParentName" ColumnName="ParentName" />
+                <ScalarProperty Name="PortalLink" ColumnName="PortalLink" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="ExtraKey" ColumnName="ExtraKey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Configs">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.Config">
+              <MappingFragment StoreEntitySet="Config">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ComID" ColumnName="ComID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvCategories">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.InvCategory">
+              <MappingFragment StoreEntitySet="InvCategory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="InvPattern" ColumnName="InvPattern" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsPub" ColumnName="IsPub" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceTemplates">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.InvoiceTemplate">
+              <MappingFragment StoreEntitySet="InvoiceTemplate">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InvCateID" ColumnName="InvCateID" />
+                <ScalarProperty Name="InvCateName" ColumnName="InvCateName" />
+                <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+                <ScalarProperty Name="XmlFile" ColumnName="XmlFile" />
+                <ScalarProperty Name="XsltFile" ColumnName="XsltFile" />
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+                <ScalarProperty Name="InvoiceView" ColumnName="InvoiceView" />
+                <ScalarProperty Name="IGenerator" ColumnName="IGenerator" />
+                <ScalarProperty Name="IViewer" ColumnName="IViewer" />
+                <ScalarProperty Name="UploadService" ColumnName="UploadService" />
+                <ScalarProperty Name="ParseService" ColumnName="ParseService" />
+                <ScalarProperty Name="CssData" ColumnName="CssData" />
+                <ScalarProperty Name="CssLogo" ColumnName="CssLogo" />
+                <ScalarProperty Name="CssBackgr" ColumnName="CssBackgr" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="IsPub" ColumnName="IsPub" />
+                <ScalarProperty Name="IsCertify" ColumnName="IsCertify" />
+                <ScalarProperty Name="TemCateID" ColumnName="TemCateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvTemplates">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.InvTemplate">
+              <MappingFragment StoreEntitySet="InvTemplate">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InvCateID" ColumnName="InvCateID" />
+                <ScalarProperty Name="InvCateName" ColumnName="InvCateName" />
+                <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+                <ScalarProperty Name="XmlFile" ColumnName="XmlFile" />
+                <ScalarProperty Name="XsltFile" ColumnName="XsltFile" />
+                <ScalarProperty Name="ServiceType" ColumnName="ServiceType" />
+                <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
+                <ScalarProperty Name="InvoiceView" ColumnName="InvoiceView" />
+                <ScalarProperty Name="IGenerator" ColumnName="IGenerator" />
+                <ScalarProperty Name="IViewer" ColumnName="IViewer" />
+                <ScalarProperty Name="UploadService" ColumnName="UploadService" />
+                <ScalarProperty Name="ParseService" ColumnName="ParseService" />
+                <ScalarProperty Name="CssData" ColumnName="CssData" />
+                <ScalarProperty Name="CssLogo" ColumnName="CssLogo" />
+                <ScalarProperty Name="CssBackgr" ColumnName="CssBackgr" />
+                <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+                <ScalarProperty Name="IsPub" ColumnName="IsPub" />
+                <ScalarProperty Name="IsCertify" ColumnName="IsCertify" />
+                <ScalarProperty Name="IdTemp" ColumnName="IdTemp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KeyStores">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.KeyStore">
+              <MappingFragment StoreEntitySet="KeyStores">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ComID" ColumnName="ComID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="SlotIndex" ColumnName="SlotIndex" />
+                <ScalarProperty Name="SerialCert" ColumnName="SerialCert" />
+                <ScalarProperty Name="KeyStoresOf" ColumnName="KeyStoresOf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.Notification">
+              <MappingFragment StoreEntitySet="Notification">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegisterTemps">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.RegisterTemp">
+              <MappingFragment StoreEntitySet="RegisterTemp">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ComId" ColumnName="ComId" />
+                <ScalarProperty Name="InvCateID" ColumnName="InvCateID" />
+                <ScalarProperty Name="PatternOrder" ColumnName="PatternOrder" />
+                <ScalarProperty Name="InvPattern" ColumnName="InvPattern" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameInvoice" ColumnName="NameInvoice" />
+                <ScalarProperty Name="CssData" ColumnName="CssData" />
+                <ScalarProperty Name="CssLogo" ColumnName="CssLogo" />
+                <ScalarProperty Name="CssBackgr" ColumnName="CssBackgr" />
+                <ScalarProperty Name="IsCertify" ColumnName="IsCertify" />
+                <ScalarProperty Name="ICertifyProvider" ColumnName="ICertifyProvider" />
+                <ScalarProperty Name="TempID" ColumnName="TempID" />
+                <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServicePackages">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.ServicePackage">
+              <MappingFragment StoreEntitySet="ServicePackages">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ComID" ColumnName="ComID" />
+                <ScalarProperty Name="invPattern" ColumnName="invPattern" />
+                <ScalarProperty Name="invSerial" ColumnName="invSerial" />
+                <ScalarProperty Name="ServiceCode" ColumnName="ServiceCode" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="TotalInvoice" ColumnName="TotalInvoice" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaxAuthorities">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.TaxAuthority">
+              <MappingFragment StoreEntitySet="TaxAuthority">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="hddt_qldv_tester_Model.Unit">
+              <MappingFragment StoreEntitySet="Unit">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ded8cfb01a794ba98de075c6dd21a396" Name="Diagram1">
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.Company" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.Config" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.KeyStore" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.ServicePackage" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.InvTemplate" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.RegisterTemp" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.TaxAuthority" Width="1.5" PointX="6.75" PointY="5.75" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.Unit" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.Notification" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.InvoiceTemplate" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="hddt_qldv_MIFI.InvCategory" Width="1.5" PointX="6.75" PointY="9.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

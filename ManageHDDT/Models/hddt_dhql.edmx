@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="hddt_dhql_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="dhql_functional_authority">
+          <Key>
+            <PropertyRef Name="card" />
+          </Key>
+          <Property Name="card" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id" Type="int" />
+          <Property Name="root_id" Type="int" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="description" Type="nvarchar" MaxLength="200" />
+          <Property Name="is_authorized" Type="bit" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="modify_date" Type="datetime" />
+          <Property Name="flag" Type="bit" />
+        </EntityType>
+        <EntityType Name="dhql_rank">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="value" Type="int" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="is_master" Type="bit" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="modify_date" Type="datetime" />
+          <Property Name="flag" Type="bit" />
+        </EntityType>
+        <EntityType Name="dhql_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="rank" Type="smallint" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="modify_date" Type="datetime" />
+          <Property Name="flag" Type="bit" />
+        </EntityType>
+        <EntityType Name="dhql_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="email_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="login_token" Type="varchar" MaxLength="200" />
+          <Property Name="role" Type="nvarchar" MaxLength="50" />
+          <Property Name="functions" Type="varchar(max)" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="modify_date" Type="datetime" />
+          <Property Name="flag" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="hddt_dhql_ModelStoreContainer">
+          <EntitySet Name="dhql_functional_authority" EntityType="Self.dhql_functional_authority" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dhql_rank" EntityType="Self.dhql_rank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dhql_role" EntityType="Self.dhql_role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dhql_user" EntityType="Self.dhql_user" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="hddt_dhql_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="dhql_functional_authority">
+          <Key>
+            <PropertyRef Name="card" />
+          </Key>
+          <Property Name="card" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id" Type="Int32" />
+          <Property Name="root_id" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="is_authorized" Type="Boolean" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Precision="3" />
+          <Property Name="flag" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="dhql_rank">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="value" Type="Int32" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="is_master" Type="Boolean" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Precision="3" />
+          <Property Name="flag" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="dhql_role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="rank" Type="Int16" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Precision="3" />
+          <Property Name="flag" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="dhql_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="login_token" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="functions" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Precision="3" />
+          <Property Name="flag" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="hddt_dhql_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="dhql_functional_authority" EntityType="Self.dhql_functional_authority" />
+          <EntitySet Name="dhql_rank" EntityType="Self.dhql_rank" />
+          <EntitySet Name="dhql_role" EntityType="Self.dhql_role" />
+          <EntitySet Name="dhql_user" EntityType="Self.dhql_user" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="hddt_dhql_ModelStoreContainer" CdmEntityContainer="hddt_dhql_Entities">
+          <EntitySetMapping Name="dhql_functional_authority">
+            <EntityTypeMapping TypeName="hddt_dhql_Model.dhql_functional_authority">
+              <MappingFragment StoreEntitySet="dhql_functional_authority">
+                <ScalarProperty Name="card" ColumnName="card" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="root_id" ColumnName="root_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="is_authorized" ColumnName="is_authorized" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dhql_rank">
+            <EntityTypeMapping TypeName="hddt_dhql_Model.dhql_rank">
+              <MappingFragment StoreEntitySet="dhql_rank">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="is_master" ColumnName="is_master" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dhql_role">
+            <EntityTypeMapping TypeName="hddt_dhql_Model.dhql_role">
+              <MappingFragment StoreEntitySet="dhql_role">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="rank" ColumnName="rank" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dhql_user">
+            <EntityTypeMapping TypeName="hddt_dhql_Model.dhql_user">
+              <MappingFragment StoreEntitySet="dhql_user">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="email_address" ColumnName="email_address" />
+                <ScalarProperty Name="login_token" ColumnName="login_token" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="functions" ColumnName="functions" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+                <ScalarProperty Name="flag" ColumnName="flag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

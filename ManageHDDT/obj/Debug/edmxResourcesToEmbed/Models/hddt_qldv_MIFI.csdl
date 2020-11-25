@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hddt_qldv_MIFI" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="BankAccountName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="BankName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="BankNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPerson" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RepresentPerson" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TaxAuthorityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SignatureImage" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Domain" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Approved" Type="Boolean" />
+    <Property Name="IsUsed" Type="Boolean" />
+    <Property Name="MailContact" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ParentName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PortalLink" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="DepartmentId" Type="Int32" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExtraKey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComID" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="KeyStore">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComID" Type="Int32" />
+    <Property Name="Type" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Path" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SlotIndex" Type="Int32" />
+    <Property Name="SerialCert" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="KeyStoresOf" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServicePackage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComID" Type="Int32" />
+    <Property Name="invPattern" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="invSerial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TotalInvoice" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="ServiceID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="hddt_qldv_MIFI_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Configs" EntityType="Self.Config" />
+    <EntitySet Name="KeyStores" EntityType="Self.KeyStore" />
+    <EntitySet Name="ServicePackages" EntityType="Self.ServicePackage" />
+    <EntitySet Name="InvTemplates" EntityType="hddt_qldv_MIFI.InvTemplate" />
+    <EntitySet Name="RegisterTemps" EntityType="hddt_qldv_MIFI.RegisterTemp" />
+    <EntitySet Name="TaxAuthorities" EntityType="hddt_qldv_MIFI.TaxAuthority" />
+    <EntitySet Name="Units" EntityType="hddt_qldv_MIFI.Unit" />
+    <EntitySet Name="Notifications" EntityType="hddt_qldv_MIFI.Notification" />
+    <EntitySet Name="InvoiceTemplates" EntityType="hddt_qldv_MIFI.InvoiceTemplate" />
+    <EntitySet Name="InvCategories" EntityType="hddt_qldv_MIFI.InvCategory" />
+  </EntityContainer>
+  <EntityType Name="InvTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvCateID" Type="Int32" />
+    <Property Name="InvCateName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TemplateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="XmlFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="XsltFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceView" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IGenerator" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IViewer" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UploadService" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ParseService" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CssData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CssLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CssBackgr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsPub" Type="Boolean" />
+    <Property Name="IsCertify" Type="Boolean" />
+    <Property Name="IdTemp" Type="Int32" />
+  </EntityType>
+  <EntityType Name="RegisterTemp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComId" Type="Int32" />
+    <Property Name="InvCateID" Type="Int32" />
+    <Property Name="PatternOrder" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="InvPattern" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NameInvoice" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CssData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CssLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CssBackgr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsCertify" Type="Boolean" />
+    <Property Name="ICertifyProvider" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TempID" Type="Int32" />
+    <Property Name="IsUsed" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TaxAuthority">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Visible" Type="Boolean" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FromDate" Type="DateTime" Precision="3" />
+    <Property Name="ToDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InvoiceTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="InvCateID" Type="Int32" />
+    <Property Name="InvCateName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="TemplateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="XmlFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="XsltFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InvoiceView" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IGenerator" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IViewer" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UploadService" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ParseService" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CssData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CssLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CssBackgr" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsPub" Type="Boolean" />
+    <Property Name="IsCertify" Type="Boolean" />
+    <Property Name="TemCateID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InvCategory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="InvPattern" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsPub" Type="Boolean" />
+  </EntityType>
+</Schema>

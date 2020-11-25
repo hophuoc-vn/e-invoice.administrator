@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="hddt_data_tester_ModelStoreContainer" CdmEntityContainer="hddt_data_tester_Entities">
+    <EntitySetMapping Name="Decisions">
+      <EntityTypeMapping TypeName="hddt_data_tester_Model.Decision">
+        <MappingFragment StoreEntitySet="Decision">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="DecisionName" ColumnName="DecisionName" />
+          <ScalarProperty Name="DecisionNo" ColumnName="DecisionNo" />
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="ParentCompany" ColumnName="ParentCompany" />
+          <ScalarProperty Name="ComName" ColumnName="ComName" />
+          <ScalarProperty Name="ComAddress" ColumnName="ComAddress" />
+          <ScalarProperty Name="Requester" ColumnName="Requester" />
+          <ScalarProperty Name="Director" ColumnName="Director" />
+          <ScalarProperty Name="SystemName" ColumnName="SystemName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SoftApplication" ColumnName="SoftApplication" />
+          <ScalarProperty Name="ListInvPattern" ColumnName="ListInvPattern" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="Workflow" ColumnName="Workflow" />
+          <ScalarProperty Name="Responsibility" ColumnName="Responsibility" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="EffectDate" ColumnName="EffectDate" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="TaxCode" ColumnName="TaxCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TechDepartment" ColumnName="TechDepartment" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MailTemplates">
+      <EntityTypeMapping TypeName="hddt_data_tester_Model.MailTemplate">
+        <MappingFragment StoreEntitySet="MailTemplate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="EmailFrom" ColumnName="EmailFrom" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="TemContent" ColumnName="TemContent" />
+          <ScalarProperty Name="EmailFromLabel" ColumnName="EmailFromLabel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publishes">
+      <EntityTypeMapping TypeName="hddt_data_tester_Model.Publish">
+        <MappingFragment StoreEntitySet="Publish">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ComName" ColumnName="ComName" />
+          <ScalarProperty Name="ComAddress" ColumnName="ComAddress" />
+          <ScalarProperty Name="ComPhone" ColumnName="ComPhone" />
+          <ScalarProperty Name="ComTaxCode" ColumnName="ComTaxCode" />
+          <ScalarProperty Name="RepresentPerson" ColumnName="RepresentPerson" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="TaxAuthorityCode" ColumnName="TaxAuthorityCode" />
+          <ScalarProperty Name="TaxAuthorityName" ColumnName="TaxAuthorityName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Delimiter" ColumnName="Delimiter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PublishInvoices">
+      <EntityTypeMapping TypeName="hddt_data_tester_Model.PublishInvoice">
+        <MappingFragment StoreEntitySet="PublishInvoice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ComId" ColumnName="ComId" />
+          <ScalarProperty Name="PublishID" ColumnName="PublishID" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="FromNo" ColumnName="FromNo" />
+          <ScalarProperty Name="ToNo" ColumnName="ToNo" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CurrentNo" ColumnName="CurrentNo" />
+          <ScalarProperty Name="InvSerial" ColumnName="InvSerial" />
+          <ScalarProperty Name="InvSerialPrefix" ColumnName="InvSerialPrefix" />
+          <ScalarProperty Name="InvSerialSuffix" ColumnName="InvSerialSuffix" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="RegisterID" ColumnName="RegisterID" />
+          <ScalarProperty Name="RegisterName" ColumnName="RegisterName" />
+          <ScalarProperty Name="InvPattern" ColumnName="InvPattern" />
+          <ScalarProperty Name="InvCateName" ColumnName="InvCateName" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SendEmails">
+      <EntityTypeMapping TypeName="hddt_data_tester_Model.SendEmail">
+        <MappingFragment StoreEntitySet="SendEmail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CCEmail" ColumnName="CCEmail" />
+          <ScalarProperty Name="Subject" ColumnName="Subject" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="EmailFrom" ColumnName="EmailFrom" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileAttach" ColumnName="FileAttach" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SendedDate" ColumnName="SendedDate" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="InvToken" ColumnName="InvToken" />
+          <ScalarProperty Name="BodySms" ColumnName="BodySms" />
+          <ScalarProperty Name="SmsTitle" ColumnName="SmsTitle" />
+          <ScalarProperty Name="SmsStatus" ColumnName="SmsStatus" />
+          <ScalarProperty Name="InvId" ColumnName="InvId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userdatas">
+      <EntityTypeMapping TypeName="hddt_data_tester_Model.userdata">
+        <MappingFragment StoreEntitySet="userdata">
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="FailedPassAttemptCount" ColumnName="FailedPassAttemptCount" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Serials" ColumnName="Serials" />
+          <ScalarProperty Name="PasswordMB" ColumnName="PasswordMB" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="XacNhanDangNhapMobile" ColumnName="XacNhanDangNhapMobile" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VATInvoices">
+      <EntityTypeMapping TypeName="hddt_data_tester_Model.VATInvoice">
+        <MappingFragment StoreEntitySet="VATInvoice">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="No" ColumnName="No" />
+          <ScalarProperty Name="InvCateID" ColumnName="InvCateID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="Serial" ColumnName="Serial" />
+          <ScalarProperty Name="Pattern" ColumnName="Pattern" />
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="ComName" ColumnName="ComName" />
+          <ScalarProperty Name="ComPhone" ColumnName="ComPhone" />
+          <ScalarProperty Name="ComAddress" ColumnName="ComAddress" />
+          <ScalarProperty Name="ComTaxCode" ColumnName="ComTaxCode" />
+          <ScalarProperty Name="ComBankName" ColumnName="ComBankName" />
+          <ScalarProperty Name="ComBankNo" ColumnName="ComBankNo" />
+          <ScalarProperty Name="ComFax" ColumnName="ComFax" />
+          <ScalarProperty Name="CusCode" ColumnName="CusCode" />
+          <ScalarProperty Name="CusName" ColumnName="CusName" />
+          <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+          <ScalarProperty Name="CusAddress" ColumnName="CusAddress" />
+          <ScalarProperty Name="CusPhone" ColumnName="CusPhone" />
+          <ScalarProperty Name="CusBankName" ColumnName="CusBankName" />
+          <ScalarProperty Name="CusBankNo" ColumnName="CusBankNo" />
+          <ScalarProperty Name="CusTaxCode" ColumnName="CusTaxCode" />
+          <ScalarProperty Name="CusEmail" ColumnName="CusEmail" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="VATRate" ColumnName="VATRate" />
+          <ScalarProperty Name="VATAmount" ColumnName="VATAmount" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="AmountInWords" ColumnName="AmountInWords" />
+          <ScalarProperty Name="PaymentStatus" ColumnName="PaymentStatus" />
+          <ScalarProperty Name="Converted" ColumnName="Converted" />
+          <ScalarProperty Name="KindOfService" ColumnName="KindOfService" />
+          <ScalarProperty Name="CusSignStatus" ColumnName="CusSignStatus" />
+          <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+          <ScalarProperty Name="PublishBy" ColumnName="PublishBy" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="ArisingDate" ColumnName="ArisingDate" />
+          <ScalarProperty Name="ProcessInvNote" ColumnName="ProcessInvNote" />
+          <ScalarProperty Name="Fkey" ColumnName="Fkey" />
+          <ScalarProperty Name="GrossValue" ColumnName="GrossValue" />
+          <ScalarProperty Name="VatAmount0" ColumnName="VatAmount0" />
+          <ScalarProperty Name="GrossValue0" ColumnName="GrossValue0" />
+          <ScalarProperty Name="VatAmount5" ColumnName="VatAmount5" />
+          <ScalarProperty Name="GrossValue5" ColumnName="GrossValue5" />
+          <ScalarProperty Name="VatAmount10" ColumnName="VatAmount10" />
+          <ScalarProperty Name="GrossValue10" ColumnName="GrossValue10" />
+          <ScalarProperty Name="Certified" ColumnName="Certified" />
+          <ScalarProperty Name="CertifiedID" ColumnName="CertifiedID" />
+          <ScalarProperty Name="CertifiedData" ColumnName="CertifiedData" />
+          <ScalarProperty Name="ParentName" ColumnName="ParentName" />
+          <ScalarProperty Name="VATOther" ColumnName="VATOther" />
+          <ScalarProperty Name="ChangeFees" ColumnName="ChangeFees" />
+          <ScalarProperty Name="ExtraFees" ColumnName="ExtraFees" />
+          <ScalarProperty Name="OtherFees" ColumnName="OtherFees" />
+          <ScalarProperty Name="PortalLink" ColumnName="PortalLink" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+          <ScalarProperty Name="ShipTo" ColumnName="ShipTo" />
+          <ScalarProperty Name="SO" ColumnName="SO" />
+          <ScalarProperty Name="TransNo" ColumnName="TransNo" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="NoneVat" ColumnName="NoneVat" />
+          <ScalarProperty Name="Vat0" ColumnName="Vat0" />
+          <ScalarProperty Name="Vat5" ColumnName="Vat5" />
+          <ScalarProperty Name="Vat10" ColumnName="Vat10" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Option" ColumnName="Option" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="KeyImport" ColumnName="KeyImport" />
+          <ScalarProperty Name="SttImport" ColumnName="SttImport" />
+          <ScalarProperty Name="DecimalCustomType" ColumnName="DecimalCustomType" />
+          <ScalarProperty Name="ConvertDate" ColumnName="ConvertDate" />
+          <ScalarProperty Name="TotalRows" ColumnName="TotalRows" />
+          <ScalarProperty Name="TypeInv" ColumnName="TypeInv" />
+          <ScalarProperty Name="is_syns" ColumnName="is_syns" />
+          <ScalarProperty Name="time_syns" ColumnName="time_syns" />
+          <ScalarProperty Name="TyGia" ColumnName="TyGia" />
+          <ScalarProperty Name="DonViTien" ColumnName="DonViTien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductInvs">
+      <EntityTypeMapping TypeName="hddt_data_tester_Model.ProductInv">
+        <MappingFragment StoreEntitySet="ProductInv">
+          <ScalarProperty Name="TotalChuaCK" ColumnName="TotalChuaCK" />
+          <ScalarProperty Name="ExpDate" ColumnName="ExpDate" />
+          <ScalarProperty Name="ConNo" ColumnName="ConNo" />
+          <ScalarProperty Name="Stt" ColumnName="Stt" />
+          <ScalarProperty Name="ComID" ColumnName="ComID" />
+          <ScalarProperty Name="Extra" ColumnName="Extra" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="IsSum" ColumnName="IsSum" />
+          <ScalarProperty Name="ProdType" ColumnName="ProdType" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="VATAmount" ColumnName="VATAmount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="VATRate" ColumnName="VATRate" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="InvID" ColumnName="InvID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

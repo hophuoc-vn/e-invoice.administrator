@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hddt_data_HD_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Decision">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DecisionName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DecisionNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ComID" Type="Int32" />
+    <Property Name="ParentCompany" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Requester" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Director" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SystemName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="SoftApplication" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ListInvPattern" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Purpose" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Workflow" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Responsibility" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EffectiveDate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EffectDate" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="TechDepartment" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Destination" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MailTemplate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComID" Type="Int32" />
+    <Property Name="EmailFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Subject" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="TemContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailFromLabel" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Publish">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComID" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ComName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ComPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ComTaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="RepresentPerson" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="PublishDate" Type="DateTime" Precision="3" />
+    <Property Name="TaxAuthorityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TaxAuthorityName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Delimiter" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PublishInvoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ComId" Type="Int32" />
+    <Property Name="PublishID" Type="Int32" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="FromNo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ToNo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="CurrentNo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="InvSerial" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="InvSerialPrefix" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="InvSerialSuffix" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="RegisterID" Type="Int32" />
+    <Property Name="RegisterName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InvPattern" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="InvCateName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SendEmail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CCEmail" Type="String" MaxLength="550" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EmailFrom" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="FileAttach" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="SendedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Note" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="InvToken" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="BodySms" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SmsTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SmsStatus" Type="Int32" />
+  </EntityType>
+  <EntityType Name="userdata">
+    <Key>
+      <PropertyRef Name="userid" />
+    </Key>
+    <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="password" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PasswordFormat" Type="Int32" />
+    <Property Name="PasswordSalt" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="FailedPassAttemptCount" Type="Int32" />
+    <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Serials" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordMB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="XacNhanDangNhapMobile" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VATInvoice">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvCateID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="No" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Serial" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="Pattern" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="ComID" Type="Int32" />
+    <Property Name="ComName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ComAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ComTaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ComBankName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ComBankNo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CusName" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="Buyer" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <Property Name="CusAddress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CusPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CusBankName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CusBankNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CusTaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="PublishDate" Type="DateTime" Precision="3" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="VATRate" Type="Double" />
+    <Property Name="VATAmount" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="AmountInWords" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentStatus" Type="Int32" />
+    <Property Name="Converted" Type="Int32" />
+    <Property Name="KindOfService" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CusSignStatus" Type="Int32" />
+    <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PublishBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ArisingDate" Type="DateTime" Precision="3" />
+    <Property Name="ProcessInvNote" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Fkey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="GrossValue" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="VatAmount0" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="GrossValue0" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="VatAmount5" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="GrossValue5" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="VatAmount10" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="GrossValue10" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Certified" Type="Boolean" />
+    <Property Name="CertifiedID" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="CertifiedData" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ComFax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="VATOther" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ChangeFees" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ExtraFees" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="OtherFees" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="PortalLink" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ShipTo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CusEmail" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TransNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="NoneVat" Type="Boolean" />
+    <Property Name="Vat0" Type="Boolean" />
+    <Property Name="Vat5" Type="Boolean" />
+    <Property Name="Vat10" Type="Boolean" />
+    <Property Name="Extra1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Option" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Int32" />
+    <Property Name="KeyImport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SttImport" Type="Int32" />
+    <Property Name="DecimalCustomType" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="hddt_data_HD_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Decisions" EntityType="Self.Decision" />
+    <EntitySet Name="MailTemplates" EntityType="Self.MailTemplate" />
+    <EntitySet Name="Publishes" EntityType="Self.Publish" />
+    <EntitySet Name="PublishInvoices" EntityType="Self.PublishInvoice" />
+    <EntitySet Name="SendEmails" EntityType="Self.SendEmail" />
+    <EntitySet Name="userdatas" EntityType="Self.userdata" />
+    <EntitySet Name="VATInvoices" EntityType="Self.VATInvoice" />
+    <EntitySet Name="ProductInvs" EntityType="hddt_data_HD_Model.ProductInv" />
+  </EntityContainer>
+  <EntityType Name="ProductInv">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="InvID" Type="Int32" />
+    <Property Name="Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="5" />
+    <Property Name="Quantity" Type="Double" />
+    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Total" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="VATRate" Type="Double" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="VATAmount" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="4" />
+    <Property Name="ProdType" Type="Int32" />
+    <Property Name="IsSum" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="7" />
+    <Property Name="Extra" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComID" Type="Int32" />
+    <Property Name="Stt" Type="Int32" />
+    <Property Name="ConNo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ExpDate" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

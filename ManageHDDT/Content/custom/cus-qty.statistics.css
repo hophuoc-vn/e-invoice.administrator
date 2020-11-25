@@ -1,0 +1,22 @@
+﻿#cus-entry-chart {
+    height: 440px;
+    width: 100%;
+}
+
+#date-picker-start-label {
+    padding: 8px 10px 9px 0;
+}
+
+#date-picker-end-label {
+    padding: 8px 0 9px 0;
+}
+
+#cus-entry-chart.pointer-on-bars .dxc-series rect {
+    cursor: pointer;
+}
+
+.button-container {
+    height: 40px;
+    position: absolute;
+    top: 85px;
+}

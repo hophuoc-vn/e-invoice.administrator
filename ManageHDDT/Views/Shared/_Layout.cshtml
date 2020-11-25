@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>HĐĐT Mắt Bão</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- #region Styling refs -->
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/animate.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+
+    <link href="~/Content/all.css" rel="stylesheet" />
+    <link href="~/Content/all.min.css" rel="stylesheet" />
+    <link href="~/Content/dx.common.css" rel="stylesheet" />
+    <link href="~/Content/dx.light.css" rel="stylesheet" />
+    <!-- #endregion Styling refs -->
+    <!-- #region Scripting refs -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/modernizr.min.js"></script>
+    <script src="~/Scripts/detect.js"></script>
+    <script src="~/Scripts/fastclick.js"></script>
+    <script src="~/Scripts/jquery.slimscroll.js"></script>
+    <script src="~/Scripts/jquery.blockUI.js"></script>
+    <script src="~/Scripts/waves.js"></script>
+    <script src="~/Scripts/jquery.nicescroll.js"></script>
+    <script src="~/Scripts/jquery.scrollTo.min.js"></script>
+
+    <script src="~/Scripts/dx.all.js"></script>
+    <script src="~/Scripts/dx.messages.vi.js"></script>
+    <script src="~/Scripts/all.js"></script>
+    <script src="~/Scripts/all.min.js"></script>
+    <script src="~/Scripts/app.js"></script>
+    <!-- #endregion Scripting refs -->
+</head>
+
+<body>
+    <script>
+        DevExpress.localization.locale("vi");
+    </script>
+    <!-- Navigation Bar-->
+    <header id="topnav">
+        <!-- end topbar-main -->
+        <!-- MENU Start -->
+        <div class="navbar-custom">
+            <div class="container-fluid">
+                <!-- Logo container-->
+                <div class="logo">
+                    <a href="#" class="logo">
+                        @*<a href="@Url.Action("SupTickets", "Home")" class="logo">*@
+                        <img src="~/img/logo-MIFI-sm.png" alt="" class="logo-small">
+                        <img src="~/img/logo-MIFI-l.png" alt="" class="logo-large">
+                    </a>
+                </div>
+                <!-- End Logo container-->
+                <div id="navigation">
+                    <!-- Navigation Menu-->
+                    <ul class="navigation-menu">
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="fa fa-chart-line i-fa-w-15"></i>Thống kê</a>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <a href="@Url.Action("CusQty", "Statistics")">
+                                                <i class="fa fa-users i-fa-w-19"></i>Lượng khách hàng
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("InvUsage", "Statistics")">
+                                                <i class="fa fa-cookie-bite i-fa-w-15"></i>Sử dụng hóa đơn
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="@Url.Action("SvcPkg", "Statistics")">
+                                                <i class="fa fa-briefcase i-fa-w-15"></i>Gói dịch vụ
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="fas fa-cogs i-fa-w-19"></i>Điều hành</a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href="@Url.Action("CoInvMgmt", "Operating")">
+                                        <i class="fa fa-server i-fa-w-15"></i>Quản lý hđđt
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("UserCtrl", "Operating")">
+                                        <i class="fas fa-users-cog i-fa-w-19"></i>Người dùng
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="#"><i class="fa fa-object-group i-fa-w-15"></i>Tính năng</a>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul>
+                                        <li>
+                                            <a href="@Url.Action("ResourceUpdate", "Feature")">
+                                                <i class="fas fa-pen i-fa-w-15"></i>Nhập liệu
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End navigation menu -->
+                </div> <!-- end navigation -->
+
+                <div class="menu-extras topbar-custom d-inline">
+
+                    <ul class="list-inline float-right mb-0 ">
+
+                        <li class="list-inline-item dropdown notification-list">
+                            <div class="dropdown notification-list nav-pro-img">
+                                <a class="dropdown-toggle nav-link arrow-none waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                    <img src="~/img/user_admin-img.png" alt="user" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                    <!-- item-->
+                                    <div class="dropdown-item noti-title">
+                                        <h5>Chào, @Session["User"].ToString()</h5>
+                                    </div>
+                                    <a class="dropdown-item" href="@Url.Action("OpsAdjmt", "Home")"><i class="fas fa-tools i-fa-w-15"></i>Quản trị</a>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-danger" href="@Url.Action("Logout", "Home")">
+                                        <i class="fas fa-sign-out-alt text-danger i-fa-w-15"></i>Đăng xuất
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="menu-item list-inline-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle nav-link" id="mobileToggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </li>
+                    </ul>
+                </div>
+                <!-- end menu-extras -->
+            </div> <!-- end container -->
+        </div> <!-- end navbar-custom -->
+    </header>
+    <!-- End Navigation Bar-->
+
+    <div class="wrapper">
+        <div class="container-fluid">
+
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="page-title-box">
+                        <h4 class="page-title">@ViewBag.Title</h4>
+                    </div>
+                </div>
+            </div>
+            <!-- end page title end breadcrumb -->
+            @RenderBody()
+        </div> <!-- end container -->
+    </div>
+    <!-- end wrapper -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <strong><a href="https://www.matbao.net/" target="_blank">Mắt Bão Corp</a> &copy; @DateTime.Now.Year</strong>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+</body>
+</html>

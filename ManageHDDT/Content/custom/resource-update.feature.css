@@ -1,0 +1,19 @@
+﻿#upload-block {
+    width: 350px;
+    float: left;
+}
+
+#upload-note {
+    width: auto;
+    float: left;
+}
+
+.note {
+    font-size: 10pt;
+    color: #484848;
+    margin-left: 9px;
+}
+
+.note > span {
+    font-weight: bold;
+}

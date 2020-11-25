@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Thống kê ► Gói dịch vụ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- #region Styling refs -->
+
+<!-- #endregion -->
+<!-- #region Scripting refs -->
+<script src="~/Scripts/custom/svc-pkg.statistics.js"></script>
+<!-- #endregion -->
+
+<section class="content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card m-b-30">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="more-less fa fa-angle-up"></i>
+                                    Danh sách các gói
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse show" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <h4 class="mt-0 header-title fit-w"><i class="fas fa-chart-pie i-fa-w-17"></i>Biểu đồ danh sách các gói</h4>
+                                        <div id="svc-pkg-chart-indicator"></div>
+                                        <div id="svc-pkg-chart"></div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <h4 class="mt-0 header-title fit-w"><i class="fa fa-columns i-fa-w-16"></i>Bảng kê các công ty theo gói: <span id="svc-pkg-table-title" /></h4>
+                                        <div id="svc-pkg-table-indicator"></div>
+                                        <div id="svc-pkg-table" class="clear-both"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
